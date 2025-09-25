@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-noseyparker [![Build](https://github.com/infrastructurebuilder/asdf-noseyparker/actions/workflows/build.yml/badge.svg)](https://github.com/infrastructurebuilder/asdf-noseyparker/actions/workflows/build.yml) [![Lint](https://github.com/infrastructurebuilder/asdf-noseyparker/actions/workflows/lint.yml/badge.svg)](https://github.com/infrastructurebuilder/asdf-noseyparker/actions/workflows/lint.yml)
+# asdf-plugin-noseyparker [![Build](https://github.com/infrastructurebuilder/asdf-plugin-noseyparker/actions/workflows/build.yml/badge.svg)](https://github.com/infrastructurebuilder/asdf-plugin-noseyparker/actions/workflows/build.yml) [![Lint](https://github.com/infrastructurebuilder/asdf-plugin-noseyparker/actions/workflows/lint.yml/badge.svg)](https://github.com/infrastructurebuilder/asdf-plugin-noseyparker/actions/workflows/lint.yml)
 
 [noseyparker](https://github.com/praetorian-inc/noseyparker) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -8,36 +8,39 @@
 
 # Contents
 
+- [asdf-plugin-noseyparker  ](#asdf-plugin-noseyparker--)
+- [Contents](#contents)
 - [Dependencies](#dependencies)
 - [Install](#install)
+  - [noseyparker](#noseyparker)
 - [Contributing](#contributing)
 - [License](#license)
 
 # Dependencies
 
-**TODO: adapt this section**
-
 - `bash`, `curl`, `tar`, and [POSIX utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html).
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
-
+- [Git](https://git-scm.com) (for installing from git)
+- `shfmt` and `shellcheck` (for contributing)
+-
 # Install
 
 Plugin:
 
 ```shell
-asdf plugin add noseyparker
-# or
-asdf plugin add noseyparker https://github.com/infrastructurebuilder/asdf-noseyparker.git
+asdf plugin add noseyparker https://github.com/infrastructurebuilder/asdf-plugin-noseyparker.git
 ```
 
-noseyparker:
+## noseyparker
 
 ```shell
 # Show all installable versions
 asdf list-all noseyparker
 
-# Install specific version
+# Install latest version
 asdf install noseyparker latest
+
+# Install specific version
+asdf install noseyparker 0.23.0
 
 # Set a version globally (on your ~/.tool-versions file)
 asdf global noseyparker latest
@@ -53,7 +56,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/infrastructurebuilder/asdf-noseyparker/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/infrastructurebuilder/asdf-plugin-noseyparker/graphs/contributors)!
 
 # License
 

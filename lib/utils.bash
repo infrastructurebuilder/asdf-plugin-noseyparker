@@ -36,13 +36,36 @@ list_all_versions() {
 	list_github_tags
 }
 
+detect_system() {
+    local os_type
+		os_type=$(uname -s)
+
+    case "$os_type" in
+        "Darwin")
+            echo "apple-darwin"
+            ;;
+        "Linux")
+            # For Linux, check which C library is in use
+            if ldd /bin/ls 2>/dev/null | grep -q 'musl'; then
+                echo "unknown-linux-musl"
+            else
+                echo "unknown-linux-gnu"
+            fi
+            ;;
+        *)
+            # Handle other operating systems or print an unknown
+            echo "unknown-os-or-type"
+            ;;
+    esac
+}
+
 download_release() {
-	local version filename url
+	local version filename url archtype osid
 	version="$1"
 	filename="$2"
-
-	# TODO: Adapt the release URL convention for noseyparker
-	url="$GH_REPO/archive/v${version}.tar.gz"
+	archtype="$(uname -m)"
+	osid="$(detect_system)"
+	url="$GH_REPO/releases/download/v${version}/noseyparker-v${version}-${archtype}-${osid}.tar.gz"
 
 	echo "* Downloading $TOOL_NAME release $version..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"

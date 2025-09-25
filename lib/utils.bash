@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for noseyparker.
+# This is the correct GitHub homepage where releases can be downloaded for noseyparker.
 GH_REPO="https://github.com/praetorian-inc/noseyparker"
 TOOL_NAME="noseyparker"
 TOOL_TEST="noseyparker --version"
@@ -68,7 +68,7 @@ download_release() {
 	url="$GH_REPO/releases/download/v${version}/noseyparker-v${version}-${archtype}-${osid}.tar.gz"
 
 	echo "* Downloading $TOOL_NAME release $version..."
-	echo "   from $url"
+	echo "   from $url to $filename"
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 

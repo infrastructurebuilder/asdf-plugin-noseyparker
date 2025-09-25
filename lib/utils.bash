@@ -5,7 +5,7 @@ set -euo pipefail
 # This is the correct GitHub homepage where releases can be downloaded for noseyparker.
 GH_REPO="https://github.com/praetorian-inc/noseyparker"
 TOOL_NAME="noseyparker"
-TOOL_TEST="noseyparker --version"
+TOOL_TEST="bin/noseyparker --version"
 
 fail() {
 	echo -e "asdf-$TOOL_NAME: $*"

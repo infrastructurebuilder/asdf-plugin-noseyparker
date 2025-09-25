@@ -68,6 +68,7 @@ download_release() {
 	url="$GH_REPO/releases/download/v${version}/noseyparker-v${version}-${archtype}-${osid}.tar.gz"
 
 	echo "* Downloading $TOOL_NAME release $version..."
+	echo "   from $url"
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
